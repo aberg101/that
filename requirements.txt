@@ -1,0 +1,1 @@
+Flask==2.0.3\nSQLAlchemy==1.4.27\nTensorFlow==2.7.0\nnumpy==1.21.2\nPillow==8.4.0\nrequests==2.26.0\nFlask-Migrate==3.1.0\nFlask-SQLAlchemy==2.5.1\nflask-cors==3.0.10\npytest==6.2.5\ngunicorn==20.1.0\nJinja2==3.0.3\npsycopg2-binary==2.9.1\n
