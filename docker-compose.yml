@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mydatabase
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:latest
+    restart: always
+
+  backend:
+    build: ./backend
+    restart: always
+    environment:
+      DATABASE_URL: postgres://user:password@postgres/mydatabase
+    depends_on:
+      - postgres
+
+  frontend:
+    build: ./frontend
+    restart: always
+    ports:
+      - "3000:3000"
+
+volumes:
+  postgres_data:
